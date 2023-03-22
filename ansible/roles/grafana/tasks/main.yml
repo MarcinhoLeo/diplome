@@ -1,0 +1,10 @@
+- name: Create elastic
+  docker_container:
+    name: "grafana"
+    image: "grafana/grafana:8.0.0"
+    state: started
+    recreate: yes
+    restart: yes
+    restart_policy: always
+    ports:
+      - "3000:3000"

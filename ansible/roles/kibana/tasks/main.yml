@@ -1,0 +1,12 @@
+- name: Create elastic
+  docker_container:
+    name: "kibana"
+    image: "elastic/kibana:8.0.0"
+    state: started
+    recreate: yes
+    restart: yes
+    restart_policy: always
+    volumes:
+      - '/home/ubuntu/kibana.yml:/usr/share/kibana/config/kibana.yml'
+    ports:
+      - "5601:5601"

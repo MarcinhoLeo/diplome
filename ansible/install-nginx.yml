@@ -1,0 +1,10 @@
+- name: Install nginx
+  hosts: web
+  become: yes
+  vars:
+    node_exporter_version: 1.4.0
+    nginxlog_exporter_version: 1.10.0
+  roles:
+    - install_nginx
+    - node_exporter
+    - nginx_log_exporter

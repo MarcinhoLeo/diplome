@@ -1,0 +1,41 @@
+all:
+  children:
+    web:
+      hosts:
+        vm1:
+          ansible_host: 192.168.1.29
+          ansible_port: 22
+          ansible_user: ubuntu
+          ansible_ssh_common_args: '-o ProxyCommand="ssh -p 22 -W %h:%p -q ubuntu@158.160.28.184"'
+
+        vm2:
+          ansible_host: 192.168.3.16
+          ansible_port: 22
+          ansible_user: ubuntu
+          ansible_ssh_common_args: '-o ProxyCommand="ssh -p 22 -W %h:%p -q ubuntu@158.160.28.184"'
+
+    monitoring:
+      hosts:
+        prometheus:
+          ansible_host: 192.168.3.26
+          ansible_port: 22
+          ansible_user: ubuntu
+          ansible_ssh_common_args: '-o ProxyCommand="ssh -p 22 -W %h:%p -q ubuntu@158.160.28.184"'
+
+        elastic:
+          ansible_host: 192.168.3.33
+          ansible_port: 22
+          ansible_user: ubuntu
+          ansible_ssh_common_args: '-o ProxyCommand="ssh -p 22 -W %h:%p -q ubuntu@158.160.28.184"'
+
+        grafana:
+          ansible_host: 192.168.5.4
+          ansible_port: 22
+          ansible_user: ubuntu
+          ansible_ssh_common_args: '-o ProxyCommand="ssh -p 22 -W %h:%p -q ubuntu@158.160.28.184"'
+
+        kibana:
+          ansible_host: 192.168.5.3
+          ansible_port: 22
+          ansible_user: ubuntu
+          ansible_ssh_common_args: '-o ProxyCommand="ssh -p 22 -W %h:%p -q ubuntu@158.160.28.184"'

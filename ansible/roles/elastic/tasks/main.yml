@@ -1,0 +1,11 @@
+- name: Create elastic
+  docker_container:
+    name: "elasticsearch"
+    image: "elastic/elasticsearch:8.0.0"
+    state: started
+    recreate: yes
+    restart: yes
+    restart_policy: always
+    ports:
+      - "9200:9200"
+      - "9300:9300"
